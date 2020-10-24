@@ -35,9 +35,6 @@ const Home = () => {
           </div>
         ))
       }
-      {
-        console.log(sightings)
-      }
 
       <MyMap />
       

@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react'; 
-// import './my-map.scss';
+import './my-map.module.css'
 import mapboxgl from 'mapbox-gl';
 
 function MyMap() {
 
  let mapContainer;
-//  -73.9865811
-//  40.7305991
 
  useEffect(() => {
-   const myAPIKey = process.env.MAP_API 
+   const myAPIKey = process.env.mapAPI 
    const mapStyle = 'https://maps.geoapify.com/v1/styles/dark-matter-dark-grey/style.json'
    const initialState = {
      lng: `-73.9865811`,
