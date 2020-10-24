@@ -1,28 +1,27 @@
-import React, { useEffect } from 'react'; 
-import './my-map.module.css'
-import mapboxgl from 'mapbox-gl';
+import React, { useState } from 'react'
+import ReactMapGL from 'react-map-gl'
+import MapMarker from './mapMarker'
 
-function MyMap() {
+const Map = () => {
+  
+  const [mapOptions, setMapOptions ] = useState({
+    width: 700,
+    height: 300,
+    latitude: 37.7577,
+    longitude: -122.4376,
+    zoom: 7
+  })
 
- let mapContainer;
-
- useEffect(() => {
-   const myAPIKey = process.env.mapAPI 
-   const mapStyle = 'https://maps.geoapify.com/v1/styles/dark-matter-dark-grey/style.json'
-   const initialState = {
-     lng: `-73.9865811`,
-     lat: `40.7305991`,
-     zoom: 4
-   };
-
-   const map = new mapboxgl.Map({
-     container: mapContainer,
-     style: `${mapStyle}?apiKey=${myAPIKey}`,
-     center: [initialState.lng, initialState.lat],
-     zoom: initialState.zoom
-   });
- }, [mapContainer]);
-
- return (<div className="map-container" ref={el => mapContainer = el}></div>);
+  return (
+    <ReactMapGL
+      {...mapOptions}
+      mapboxApiAccessToken={process.env.mapAPI}
+      mapStyle="mapbox://styles/tawnee/ckgo2x2nv1ons19mig9z8987p"
+      onViewportChange={(viewport) => setMapOptions(viewport)}
+    >
+      <MapMarker latitude={37.78} longitude={-122.41} />
+    </ReactMapGL>
+  )
 }
-export default MyMap;
+
+export default Map

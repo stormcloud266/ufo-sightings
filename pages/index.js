@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import axios from 'axios'
 import ufoSightings from './api/ufo-sightings'
-import MyMap from '../components/map'
+import Map from '../components/map'
 
 const Home = () => {
 
@@ -36,7 +36,7 @@ const Home = () => {
         ))
       }
 
-      <MyMap />
+      <Map />
       
     </div>
   )
