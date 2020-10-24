@@ -1,44 +1,31 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState,  } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import axios from 'axios'
 import ufoSightings from './api/ufo-sightings'
 import Map from '../components/map'
+import SightingsContext from '../context/sightings-context'
+import Form from '../components/form'
 
 const Home = () => {
 
   const [search, setSearch] = useState('')
   const [sightings, setSightings] = useState([])
 
-  const getData = () => {
-    axios.get(`/api/ufo-sightings`)
-      .then(res => {
-        setSightings(res.data.sightings)
-      })
-      .catch(err => console.log(err))
-  }
-
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <SightingsContext.Provider value={{sightings, setSightings}}>
+      <div className={styles.container}>
+        <Head>
+          <title>Create Next App</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <h1>hello there</h1>
-      <button onClick={() => getData()}>hey</button>
+        <h1>hello there</h1>
+        <Form />
 
-      {
-        sightings.map(sighting => (
-          <div key={sighting._id}>
-            <h3>{sighting.summary}</h3>
-          </div>
-        ))
-      }
-
-      <Map />
-      
-    </div>
+        <Map />
+        
+      </div>
+    </SightingsContext.Provider>
   )
 }
 

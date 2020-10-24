@@ -32,13 +32,14 @@ const MapMarker = ({ latitude, longitude }) => {
 
 const MarkerContainer = styled.div`
   background-color: #00ff91;
-  padding: 6px;
+  padding: 3px;
   position: relative;
   border-radius: 10px;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
   border-bottom-left-radius: 100px;
   transform: rotate(45deg);
+  opacity: .8;
 
   svg {
     display: block;

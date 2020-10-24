@@ -1,16 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import ReactMapGL from 'react-map-gl'
 import MapMarker from './mapMarker'
+import SightingsContext from '../context/sightings-context'
 
 const Map = () => {
+
+  const { sightings } = useContext(SightingsContext)
   
   const [mapOptions, setMapOptions ] = useState({
     width: 700,
     height: 300,
     latitude: 37.7577,
     longitude: -122.4376,
-    zoom: 7
+    zoom: 5
   })
+
+  useEffect(() => {
+    if (sightings.length > 0) {
+      setMapOptions({
+        width: 700,
+        height: 300,
+        latitude: sightings[0].loc[1],
+        longitude: sightings[0].loc[0],
+        zoom: 5
+      })
+    }
+  }, [sightings])
 
   return (
     <ReactMapGL
@@ -19,7 +34,16 @@ const Map = () => {
       mapStyle="mapbox://styles/tawnee/ckgo2x2nv1ons19mig9z8987p"
       onViewportChange={(viewport) => setMapOptions(viewport)}
     >
-      <MapMarker latitude={37.78} longitude={-122.41} />
+      {
+        sightings.map(sighting => (
+          <MapMarker
+            key={sighting._id}
+            latitude={sighting.loc[1]} 
+            longitude={sighting.loc[0]}
+          />
+        ))
+      }
+      
     </ReactMapGL>
   )
 }
