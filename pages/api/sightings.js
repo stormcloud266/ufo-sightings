@@ -6,11 +6,13 @@ export default (req, res) => {
     return res.json({ errorMessage: 'BAD_REQUEST' })
   }
 
-  // axios.get('http://ufo-api.herokuapp.com/api/sightings/search?state=or')
+  const URL = `http://ufo-api.herokuapp.com/api/sightings/search?state=${req.query.stateCode}`
+
+  axios.get(URL)
   // axios.get('https://official-joke-api.appspot.com/jokes/random')
-  axios.get('http://localhost:3000/api/ufo-sightings')
+  // axios.get('http://localhost:3000/api/ufo-sightings')
   .then(response => {
-      res.json({ response: response.data })
+      res.json({ sightings: response.data.sightings })
     })
     .catch(err => {
       res.json({ errorMessage: 'NO_DATA' })

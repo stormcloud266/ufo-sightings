@@ -6,13 +6,13 @@ import SightingsContext from '../context/sightings-context'
 const Map = () => {
 
   const { sightings } = useContext(SightingsContext)
-  
+
   const [mapOptions, setMapOptions ] = useState({
     width: 700,
     height: 300,
-    latitude: 37.7577,
-    longitude: -122.4376,
-    zoom: 5
+    latitude: 39.0119,
+    longitude: -98.4842,
+    zoom: 3
   })
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Map = () => {
         height: 300,
         latitude: sightings[0].loc[1],
         longitude: sightings[0].loc[0],
-        zoom: 5
+        zoom: 3
       })
     }
   }, [sightings])

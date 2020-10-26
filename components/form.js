@@ -10,12 +10,12 @@ const Form = ({ setLoading }) => {
 
   const handleSetState = (e) => {
     const stateCode = e.target.value.toLowerCase()
-
     setLoading(true)
 
     axios.get('/api/sightings', { params: { stateCode } })
       .then(res => {
-        console.log('form response: ', res.data)
+        console.log(res.data)
+        setSightings(res.data.sightings)
         setLoading(false)
       })
       .catch(err => {
