@@ -10,6 +10,7 @@ const Home = () => {
 
   const [search, setSearch] = useState('')
   const [sightings, setSightings] = useState([])
+  const [loading, setLoading] = useState(false)
 
   return (
     <SightingsContext.Provider value={{sightings, setSightings}}>
@@ -20,7 +21,12 @@ const Home = () => {
         </Head>
 
         <h1>hello there</h1>
-        <Form />
+
+        {
+          loading && <h2>loading...</h2>
+        }
+        
+        <Form setLoading={setLoading}/>
 
         <Map />
         

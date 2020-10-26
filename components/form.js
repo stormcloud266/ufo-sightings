@@ -1,31 +1,27 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 import SightingsContext from '../context/sightings-context'
 import axios from 'axios'
 
-const Form = () => {
+const Form = ({ setLoading }) => {
 
   const { setSightings } = useContext(SightingsContext)
 
-  useEffect(() => {
-    axios.get('/api/sightings')
-      .then(res => {
-        console.log('form response: ', res.data)
-      })
-      .catch(err => {
-        console.log('form error: ', err.data)
-      })
-  })
 
   const handleSetState = (e) => {
     const stateCode = e.target.value.toLowerCase()
 
-    // http://ufo-api.herokuapp.com/api/sightings/search?state=or
-    // axios.get(`/api/ufo-sightings`)
-    //   .then(res => {
-    //     setSightings(res.data.sightings)
-    //   })
-    //   .catch(err => console.log(err))
+    setLoading(true)
+
+    axios.get('/api/sightings', { params: { stateCode } })
+      .then(res => {
+        console.log('form response: ', res.data)
+        setLoading(false)
+      })
+      .catch(err => {
+        console.log('form error: ', err)
+        setLoading(false)
+      })
   }
 
   return (
