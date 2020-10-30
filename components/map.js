@@ -30,7 +30,7 @@ const Map = () => {
   return (
     <ReactMapGL
       {...mapOptions}
-      mapboxApiAccessToken={process.env.mapAPI}
+      mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAP_API}
       mapStyle="mapbox://styles/tawnee/ckgo2x2nv1ons19mig9z8987p"
       onViewportChange={(viewport) => setMapOptions(viewport)}
     >
