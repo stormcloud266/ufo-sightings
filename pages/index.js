@@ -20,13 +20,15 @@ const Home = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <h1>hello there</h1>
+        <div>
+          <h1>hello there</h1>
 
-        {
-          loading && <h2>loading...</h2>
-        }
-        
-        <Form setLoading={setLoading}/>
+          {
+            loading && <h2>loading...</h2>
+          }
+
+          <Form setLoading={setLoading}/>
+        </div>
 
         <Map />
         
