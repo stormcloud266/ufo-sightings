@@ -1,31 +1,30 @@
-import React, { useState, useContext } from 'react'
-import styled from 'styled-components'
-import SightingsContext from '../context/sightings-context'
-import axios from 'axios'
+import React, { useState, useContext } from "react"
+import styled from "styled-components"
+import SightingsContext from "../context/sightings-context"
+import axios from "axios"
 
 const Form = ({ setLoading }) => {
-
   const { setSightings } = useContext(SightingsContext)
-
 
   const handleSetState = (e) => {
     const stateCode = e.target.value.toLowerCase()
     setLoading(true)
 
-    axios.get(`/api/${stateCode}`, { params: { stateCode } })
-      .then(res => {
-        console.log(res.data.sightings)
+    axios
+      .get(`/api/${stateCode}`, { params: { stateCode } })
+      .then((res) => {
         setSightings(res.data.sightings)
         setLoading(false)
       })
-      .catch(err => {
-        console.log('form error: ', err)
+      .catch((err) => {
+        console.log("form error: ", err)
         setLoading(false)
       })
   }
 
   return (
     <Select onChange={(e) => handleSetState(e)}>
+      <option disabled>Select State</option>
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
       <option value="AZ">Arizona</option>
