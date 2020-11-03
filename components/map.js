@@ -19,8 +19,8 @@ const Map = () => {
     if (sightings.length > 0) {
       setMapOptions(prevState => ({
         ...prevState,
-        latitude: sightings[0].loc[1],
-        longitude: sightings[0].loc[0]
+        latitude: parseFloat(sightings[0].latitude),
+        longitude: parseFloat(sightings[0].longitude)
       }))
     }
   }, [sightings])
@@ -39,11 +39,11 @@ const Map = () => {
       }}
     >
       {
-        sightings.map(sighting => (
+        sightings.map((sighting, i) => (
           <MapMarker
-            key={sighting._id}
-            latitude={sighting.loc[1]} 
-            longitude={sighting.loc[0]}
+            key={i}
+            latitude={parseFloat(sighting.latitude)} 
+            longitude={parseFloat(sighting.longitude)}
           />
         ))
       }

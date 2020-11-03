@@ -10,7 +10,7 @@ export default (req, res) => {
 
   axios.get(URL)
   // axios.get('https://official-joke-api.appspot.com/jokes/random')
-  // axios.get('http://localhost:3000/api/ufo-sightings')
+  axios.get('http://localhost:3000/api/tx')
   .then(response => {
       res.json({ sightings: response.data.sightings })
     })
