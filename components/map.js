@@ -8,7 +8,7 @@ const Map = () => {
 
   const [mapOptions, setMapOptions] = useState({
     width: "100vw",
-    height: 500,
+    height: "calc(100vh - 80px)",
     zoom: 4,
     latitude: 39.0119,
     longitude: -98.4842,
@@ -30,10 +30,14 @@ const Map = () => {
       mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAP_API}
       mapStyle="mapbox://styles/tawnee/ckgo2x2nv1ons19mig9z8987p"
       onViewportChange={(viewport) => setMapOptions(viewport)}
+      style={{
+        flex: 1,
+      }}
       onResize={() => {
         setMapOptions((prevState) => ({
           ...prevState,
           width: "100vw",
+          height: "calc(100vh - 80px)"
         }))
       }}
     >
