@@ -10,6 +10,10 @@ const Header = () => {
       <h1>UFO Sightings</h1>
 
       <FormContainer>
+      <p>Please select a state</p>
+
+      <Form setLoading={setLoading} />
+
         {
           loading && (
             <svg
@@ -29,7 +33,6 @@ const Header = () => {
           )
         }
 
-        <Form setLoading={setLoading} />
       </FormContainer>
 
     </StyledHeader>
@@ -47,8 +50,8 @@ const rotate = keyframes`
 `;
 
 const StyledHeader = styled.header`
-  min-width: 100%;
-  max-width: 1120px;
+  width: 100%;
+  max-width: 1100px;
   padding: 16px 32px;
   display: flex;
   justify-content: space-between;
@@ -58,16 +61,49 @@ const StyledHeader = styled.header`
   h1 {
     color: #00ff91;
   }
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    h1 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+  }
 `
 
 const FormContainer = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
+
+  select {
+    margin-right: 40px;
+  }
+
+  p {
+    margin-right: 12px;
+    color: #b9b7b9;
+  }
 
   svg {
-    margin-right: 20px;
+    position: absolute;
+    right: 0;
     display: block;
     animation: ${rotate} 1.5s ease-in-out infinite;
+  }
+
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    select {
+      margin-right: 0;
+    }
+    p {
+      margin-bottom: 16px;
+      margin-right: 0;
+    }
+    svg {
+      bottom: 6px;
+      right: -40px;
+    }
   }
 `
 
