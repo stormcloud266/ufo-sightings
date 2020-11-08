@@ -12,7 +12,7 @@ const Home = () => {
     <SightingsContext.Provider value={{ sightings, setSightings }}>
       <Container>
         <Head>
-          <title>Create Next App</title>
+          <title>UFO Sightings</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 

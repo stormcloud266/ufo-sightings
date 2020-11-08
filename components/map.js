@@ -30,9 +30,7 @@ const Map = () => {
       mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAP_API}
       mapStyle="mapbox://styles/tawnee/ckgo2x2nv1ons19mig9z8987p"
       onViewportChange={(viewport) => setMapOptions(viewport)}
-      style={{
-        flex: 1,
-      }}
+      style={{ flex: 1 }}
       onResize={() => {
         setMapOptions((prevState) => ({
           ...prevState,
@@ -41,7 +39,7 @@ const Map = () => {
         }))
       }}
     >
-      {sightings.slice(0, 99).map((sighting, i) => (
+      {sightings.map((sighting, i) => (
         <MapMarker
           key={i}
           latitude={parseFloat(sighting.latitude)}

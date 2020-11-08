@@ -11,13 +11,13 @@ const Form = ({ setLoading }) => {
     setLoading(true)
 
     axios
-      .get(`/api/${stateCode}`, { params: { stateCode } })
+      .get(`/api/${stateCode}`)
       .then((res) => {
         setSightings(res.data.sightings)
         setLoading(false)
       })
       .catch((err) => {
-        console.log("form error: ", err)
+        console.error(err)
         setLoading(false)
       })
   }
@@ -83,7 +83,8 @@ const Form = ({ setLoading }) => {
 export default Form
 
 const Select = styled.select`
-  padding: 12px 20px;
+  padding: 15px 20px 12px;
   background-color: #333;
   color: white;
+  font-family: inherit;
 `
