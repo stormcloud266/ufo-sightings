@@ -30,18 +30,21 @@ This website displays instances of UFO sightings as pins on a map. Results are f
 
 ### Installation
 
-1. Clone repo
-  `git clone git@github.com:stormcloud266/ufo-sightings.git`
+1. **Clone repo**
 
-2. Move into project
-  `cd ufo-sightings`
+   `git clone git@github.com:stormcloud266/ufo-sightings.git`
 
-3. Install packages
-  `npm i`
+2. **Move into project**
 
-4. Get your access token from [Mapbox](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/)
+   `cd ufo-sightings`
 
-5. Add your access token to the project
+3. **Install packages**
+
+   `npm i`
+
+4. **Get your access token** from [Mapbox](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/)
+
+5. **Add your access token** to the project
 
     In the root of your project, add a file called `next.config.js`. Inside this file, add the following code, replacing YOUR_ACCESS_TOKEN with the Mapbox token your created in step 4.
 
@@ -53,7 +56,7 @@ This website displays instances of UFO sightings as pins on a map. Results are f
     }
     ```
 
-6. Start development server
+6. **Start development server**
   `npm run dev`
 
 ### API Reference
