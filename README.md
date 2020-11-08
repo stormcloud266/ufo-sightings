@@ -26,11 +26,9 @@ This website displays instances of UFO sightings as pins on a map. Results are f
 - Styled Components
 - Vercel
 
----
-
 ## How To Use
 
-#### Installation
+### Installation
 
 1. Clone repo
   `git clone git@github.com:stormcloud266/ufo-sightings.git`
@@ -45,20 +43,20 @@ This website displays instances of UFO sightings as pins on a map. Results are f
 
 5. Add your access token to the project
 
-  In the root of your project, add a file called `next.config.js`. Inside this file, add the following code, replacing YOUR_ACCESS_TOKEN with the Mapbox token your created in step 4.
+    In the root of your project, add a file called `next.config.js`. Inside this file, add the following code, replacing YOUR_ACCESS_TOKEN with the Mapbox token your created in step 4.
 
-  ```javascript
-  module.exports = {
-    env: {
-      NEXT_PUBLIC_MAP_API: "YOUR_ACCESS_TOKEN",
-    },
-  }
-  ```
+    ```javascript
+    module.exports = {
+      env: {
+        NEXT_PUBLIC_MAP_API: "YOUR_ACCESS_TOKEN",
+      },
+    }
+    ```
 
 6. Start development server
   `npm run dev`
 
-#### API Reference
+### API Reference
 
 This project uses NUFORC data collected on [Kaggle](https://www.kaggle.com/NUFORC/ufo-sightings). The CSV data was converted into JSON, and [NextJS api routes](https://nextjs.org/docs/api-routes/introduction) are used to query it.
 
@@ -70,24 +68,18 @@ axios
   })
 ```
 
----
-
 ## References
 - [react-map-gl](https://github.com/visgl/react-map-gl)
 - [mapbox](https://docs.mapbox.com/)
 - [styled components](https://styled-components.com/)
 
----
-
 ## License
 
 This project is licensed under the MIT License and is free to use both personally and commercially. For more info [view license](https://github.com/stormcloud266/ufo-sightings/blob/main/LICENSE)
-
----
 
 ## Author Info
 
 - [Twitter](https://twitter.com/stormcloud266)
 - [Website](https://tawneeallport.com)
 
-[Back To The Top](#read-me-template)
+[Back To The Top](#ufo-sightings)
