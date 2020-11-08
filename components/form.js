@@ -23,8 +23,8 @@ const Form = ({ setLoading }) => {
   }
 
   return (
-    <Select onChange={(e) => handleSetState(e)}>
-      <option disabled defaultValue>Select State</option>
+    <Select onChange={(e) => handleSetState(e)} defaultValue='Select State'>
+      <option disabled value="Select State">Select State</option>
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
       <option value="AZ">Arizona</option>
