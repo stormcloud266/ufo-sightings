@@ -79,7 +79,12 @@ This project is licensed under the MIT License and is free to use both personall
 
 ## Author Info
 
-- [Twitter](https://twitter.com/stormcloud266)
-- [Website](https://tawneeallport.com)
+[Twitter](https://twitter.com/stormcloud266)
+
+[Website](https://tawneeallport.com)
+
+<a href="https://www.buymeacoffee.com/tawnee" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height="35" width="150"></a>
+
+---
 
 [Back To The Top](#ufo-sightings)
