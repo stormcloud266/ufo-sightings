@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react"
 import ReactMapGL from "react-map-gl"
 import MapMarker from "./mapMarker"
 import SightingsContext from "../context/sightings-context"
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const Map = () => {
   const { sightings } = useContext(SightingsContext)

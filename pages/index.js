@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <SightingsContext.Provider value={{ sightings, setSightings }}>
-      <Container>
+      <div>
         <Head>
           <title>UFO Sightings</title>
           <link rel="icon" href="/favicon.ico" />
@@ -20,17 +20,9 @@ const Home = () => {
 
         <Map />
 
-      </Container>
+      </div>
     </SightingsContext.Provider>
   )
 }
 
 export default Home
-
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-`

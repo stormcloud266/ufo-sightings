@@ -87,4 +87,8 @@ const Select = styled.select`
   background-color: #333;
   color: white;
   font-family: inherit;
+  outline: none;
+  border: 1px solid #777;
+  border-radius: 3px;
+  font-size: 14px;
 `
